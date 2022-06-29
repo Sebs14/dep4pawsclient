@@ -5,10 +5,15 @@ import React, { useState } from "react";
 import Title from "../Title/Title";
 import BGAnimals from "../../assets/images/puglogo.png";
 import Sidebar from "../SideBar/SideBar";
+import authService from "../../../Services/auth.service";
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
 }
+
+const logOut = () => {
+  authService.logout();
+};
 
 export default function Example({ navigation, logged }) {
   const [showSidebar, setShowSidebar] = useState(false);
@@ -44,6 +49,7 @@ export default function Example({ navigation, logged }) {
                       <NavLink
                         key={item.name}
                         to={item.href}
+                        onClick={logOut}
                         className={classNames(
                           item.current
                             ? "text-black"
