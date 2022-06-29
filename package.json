@@ -3,10 +3,11 @@
   "private": true,
   "version": "0.0.0",
   "scripts": {
+    "heroku-prebuild": "npm i --force",
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview",
-    "heroku-postbuild": "npm i --force"
+    "preview": "vite preview"
+    
   },
   "dependencies": {
     "@date-io/date-fns": "^1.3.13",
